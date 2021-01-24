@@ -44,10 +44,10 @@ check_git() {
 
 		printf "%s" "Custom commit message [Y/n]? "
 		read -n 1 yn
-		if [ $yn = 'Y' ] || [ $yn = 'y' ]; then
+		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
 			printf "%s" "> "
 			read msg
-			git commit -m $msg
+			git commit -m "$msg"
 		else
 			git commit -m "Updating .dotfiles"
 		fi
