@@ -43,7 +43,7 @@ check_git() {
 		git add --all
 
 		printf "%s" "Custom commit message [Y/n]? "
-		read -n 1 yn
+		read yn
 		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
 			printf "%s" "> "
 			read msg
