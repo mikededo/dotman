@@ -1,8 +1,10 @@
 #!/bin/zsh
 
+# Git repository location inside the computer
 REPO="$HOME/Documents/dotman"
 
 # Locations
+GIT="$HOME/.gitconfig"
 NVIM="$HOME/.config/nvim/init.vim"
 ZSH="$HOME/.zshrc"
 P10K="$HOME/.p10k.zsh"
@@ -25,6 +27,7 @@ folder_init() {
 update() {
 	printf "%s\n" "Checking for file changes and updating..."
 	# Start copying
+	cp $GIT			-vu	$REPO/.gitconfig
 	cp $NVIM		-vu	$REPO/nvim/init.vim
 	cp $ZSH 		-vu	$REPO/.zshrc
 	cp $P10K 		-vu 	$REPO/.p10k.zsh
@@ -39,19 +42,22 @@ check_git() {
 	else
 		# There are changes
 		git status -s
-		printf "%s\n" "Commiting all files..."
-		git add --all
+		printf "\n%s\n" "Commiting all files..."
 
 		printf "%s" "Custom commit message [Y/n]? "
 		read yn
+
+		msg="Updating .dotfiles"
 		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
 			printf "%s" "> "
-			read msg
-			git commit -m "$msg"
-		else
-			git commit -m "Updating .dotfiles"
+			read msg	
 		fi
-		
+
+		printf "\n%s\n" "Adding files to commit..."
+		git add --all
+		printf "\n%s\n" "Committing files..."
+		git commit -m "$msg"
+		printf "\n%s\n" "Pushin files..."
 		git push origin main
 	fi
 

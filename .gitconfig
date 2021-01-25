@@ -1,0 +1,7 @@
+[user]
+	name = Miquel de Domingo
+	email = miquelddg@gmail.com
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
