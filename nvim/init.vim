@@ -8,7 +8,7 @@ call plug#begin('~/.config/nvim/plugged')	" Plugin storage manager
 	Plug 'scrooloose/nerdtree'		" File view
 	Plug 'ryanoasis/vim-devicons'		" File view icons
 
-	Plug 'junengunn/fzf', {	'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf', {	'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'			" Open file integration [CTRL + P]
 
 	" Intelisense
