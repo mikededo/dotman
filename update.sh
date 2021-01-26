@@ -60,7 +60,7 @@ check_git() {
 		git add --all
 		printf "\n%s\n" "Committing files..."
 		git commit -m "$msg"
-		printf "\n%s\n" "Pushin files..."
+		printf "\n%s\n" "Pushing files..."
 		git push origin main
 	fi
 
