@@ -1,0 +1,12 @@
+grub-customizer
+gnome-tweaks
+
+vim
+neovim
+vscode
+spotify
+font-manager
+flameshot
+
+fonts-roboto
+fonts-firacode
