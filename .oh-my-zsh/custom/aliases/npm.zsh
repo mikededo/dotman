@@ -1,6 +1,7 @@
 # npm
 #	Scripts
 alias ni="npm install"
+alias nig="sudo npm install --global"
 alias nis="npm install --save"
 alias nxi="npx install"
 alias ns="npm start"

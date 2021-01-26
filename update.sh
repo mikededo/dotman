@@ -35,7 +35,7 @@ update() {
 	cp $P10K 		-vua	$REPO/.p10k.zsh
 	cp $OHMY 		-vua	$REPO/.oh-my-zsh/oh-my-zsh.sh
 	cp $ALIASFIL	 	-vua	$REPO/$CUSTOM
-	cp $ALIASDIR		-vura	$REPO/$CUSTOM/aliases
+	cp $ALIASDIR		-vura	$REPO/$CUSTOM
 }
 
 check_git() {

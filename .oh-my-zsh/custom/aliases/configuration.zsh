@@ -9,7 +9,7 @@ alias updzsh="exec zsh"
 
 # Alias files
 alias cfgalias="vim $HOME/.oh-my-zsh/custom/aliases/configuration.zsh"
-alias npmalias="vim $HOME/.oh-my-zsh/custom/aliases/configuration.zsh"
+alias npmalias="vim $HOME/.oh-my-zsh/custom/aliases/npm.zsh"
 
 # apt
 si() { sudo apt install "$@" }
