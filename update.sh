@@ -9,7 +9,9 @@ NVIM="$HOME/.config/nvim/init.vim"
 ZSH="$HOME/.zshrc"
 P10K="$HOME/.p10k.zsh"
 OHMY="$HOME/.oh-my-zsh/oh-my-zsh.sh"
-CUSTOM="$HOME/.oh-my-zsh/custom"
+CUSTOM=".oh-my-zsh/custom"
+ALIASFIL="$HOME/$CUSTOM/alias.zsh"
+ALIASDIR="$HOME/$CUSTOM/aliases/"
 
 # Check if folders exist
 folder_init() {
@@ -27,16 +29,17 @@ folder_init() {
 update() {
 	printf "%s\n" "Checking for file changes and updating..."
 	# Start copying
-	cp $GIT			-vu	$REPO/.gitconfig
-	cp $NVIM		-vu	$REPO/nvim/init.vim
-	cp $ZSH 		-vu	$REPO/.zshrc
-	cp $P10K 		-vu 	$REPO/.p10k.zsh
-	cp $OHMY 		-vu	$REPO/.oh-my-zsh/oh-my-zsh.sh
-	cp $CUSTOM/aliases.zsh 	-vu	$REPO/.oh-my-zsh/custom
+	cp $GIT			-vua	$REPO/.gitconfig
+	cp $NVIM		-vua	$REPO/nvim/init.vim
+	cp $ZSH 		-vua	$REPO/.zshrc
+	cp $P10K 		-vua	$REPO/.p10k.zsh
+	cp $OHMY 		-vua	$REPO/.oh-my-zsh/oh-my-zsh.sh
+	cp $ALIASFIL	 	-vua	$REPO/$CUSTOM
+	cp $ALIASDIR		-vura	$REPO/$CUSTOM/aliases
 }
 
 check_git() {
-	printf "%s\n" "Git checks..."
+	printf "\n%s\n" "Git checks..."
 	if out=$(git status --porcelain) && [ -z "$out"  ]; then
 		printf "%s\n" "Directory clean"	
 	else
