@@ -12,6 +12,8 @@ alias nlsg="npm list --global"
 #	@react
 alias nrrd="nis react-router-dom"
 alias nrpt="nis prop-types"
+#	@General
+#alias ibabel="nis @babel/core @babel/preset-env @babel/node"
 
 # Package specific
 #	React

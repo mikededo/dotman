@@ -2,7 +2,7 @@
 alias ohmyconfig="vim $HOME/.oh-my-zsh/oh-my-zsh.sh"
 alias p10kconfig="vim $HOME/.p10k.zsh"
 alias zshconfig="vim $HOME/.zshrc"
-alias nvimconfig="vim $HOME/nvim/init.vim"
+alias nvimconfig="vim $HOME/.config/nvim/init.vim"
 alias vimconfig="vim $HOME/.vimrc"
 alias dotman="$HOME/Documents/dotman"
 alias updzsh="exec zsh"
