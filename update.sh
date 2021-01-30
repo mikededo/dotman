@@ -38,35 +38,53 @@ update() {
 	cp $ALIASDIR		-vura	$REPO/$CUSTOM
 }
 
-check_git() {
+run_git() {
 	printf "\n%s\n" "Git checks..."
 	if out=$(git status --porcelain) && [ -z "$out"  ]; then
 		printf "%s\n" "Directory clean"	
 	else
 		# There are changes
 		git status -s
-		printf "\n%s\n" "Commiting all files..."
+
+		printf "\n%s\n" "Adding files to commit..."
+		git add --all
+
+		printf "%s" "Commit changes [Y/n]? "
+		read yn
+		if [ "$yn" != "Y" ] && [ "$yn" != "y" ]; then
+			exit 0
+		fi
 
 		printf "%s" "Custom commit message [Y/n]? "
 		read yn
-
 		msg="Updating .dotfiles"
 		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
 			printf "%s" "> "
 			read msg	
 		fi
 
-		printf "\n%s\n" "Adding files to commit..."
-		git add --all
-		printf "\n%s\n" "Committing files..."
+		printf "\n%s\n" "Committing files..."			
 		git commit -m "$msg"
+
+		printf "%s" "Push changes [Y/n]? "
+		read yn
+		if [ "$yn" != "Y" ] || [ "$yn" != "y" ]; then
+			exit 0
+		fi
+
 		printf "\n%s\n" "Pushing files..."
 		git push origin main
 	fi
 
-	exit
+	exit 0
 }
 
 folder_init
 update
-check_git
+
+printf "%s" "Save changes [Y/n]? "
+read yn
+if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
+	run_git
+fi
+

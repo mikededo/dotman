@@ -13,7 +13,7 @@ alias nlsg="npm list --global"
 alias nrrd="nis react-router-dom"
 alias nrpt="nis prop-types"
 #	@General
-#alias ibabel="nis @babel/core @babel/preset-env @babel/node"
+alias ibabel="nis @babel/core @babel/preset-env @babel/node"
 
 # Package specific
 #	React
@@ -32,7 +32,9 @@ rhoc() {
 	fi
 }
 #	json-server
-alias genjs="mkdir data && echo \"{\n\n}\" >> data/db.json"
+alias genjs="mkdir -p data && echo \"{\n\n}\" >> data/db.json"
+alias genjscfg="mkdir -p data && echo \"{\n\n}\" >> data/config.json"
+alias jsonscfg="json-server --config data/config.json"
 jsons() {
 	if [ -z $1 ]; then
 		json-server --watch data/db.json --port 8000
@@ -47,3 +49,5 @@ jsonsp() {
 		json-server --watch $1 --port $2
 	fi
 }
+jsonctm() { json-server "$@" }
+
