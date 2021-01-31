@@ -4,6 +4,7 @@ alias p10kconfig="vim $HOME/.p10k.zsh"
 alias zshconfig="vim $HOME/.zshrc"
 alias nvimconfig="vim $HOME/.config/nvim/init.vim"
 alias vimconfig="vim $HOME/.vimrc"
+alias gitconfig="vim $HOME/.gitconfig"
 alias dotman="$HOME/Documents/dotman"
 alias updzsh="exec zsh"
 
