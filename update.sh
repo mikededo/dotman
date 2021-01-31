@@ -68,7 +68,7 @@ run_git() {
 
 		printf "%s" "Push changes [Y/n]? "
 		read yn
-		if [ "$yn" != "Y" ] || [ "$yn" != "y" ]; then
+		if [ "$yn" != "Y" ] && [ "$yn" != "y" ]; then
 			exit 0
 		fi
 
