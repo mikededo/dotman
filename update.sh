@@ -60,7 +60,7 @@ run_git() {
 		printf "%s" "Custom commit message [Y/n]? "
 		read yn
 		msg="Updating .dotfiles"
-		if [ "$yn" != "Y" ] && [ "$yn" != "y" ]; then
+		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
 			printf "%s" "> "
 			read msg	
 		fi
