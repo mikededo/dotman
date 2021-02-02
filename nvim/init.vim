@@ -39,7 +39,7 @@ set formatoptions+=j
 set formatoptions+=r
 set formatoptions-=o
 
-" Plugins
+" CONFIG: Plugins
 " Plugins to install once nvim 0.5 is stable:
 "    - TreeSitter
 "    - Telescope
@@ -73,7 +73,7 @@ call plug#begin('~/.config/nvim/plugged')	" Plugin storage manager
   Plug 'tpope/vim-surround'
 call plug#end()
 
-colorscheme onedark					" Set theme
+colorscheme onedark
 
 " Plugins customizations
 " PLUGIN CONFIG: NERDtree
@@ -110,6 +110,9 @@ let g:coc_global_extensions	= [
 	\ 'coc-pairs',
 \ ]
 set updatetime=300
+
+" PLUGIN CONFIG: Prettify on save
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " PLUGIN CONFIG:	lightline
 if !has('gui_running')
@@ -169,14 +172,11 @@ inoremap <C-s> <ESC>:update<CR>i
 " KEYMAP: <C-a> to select word
 nnoremap <C-a> viw
 
-"	KEYMAP: Change windows
+"	KEYMAP: Change split 
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
-
-" KEYMAP: <C-Enter> for a new line and enter insert mode
-nnoremap <Leader><CR> o
 
 " KEYMAP: Insert empty line in NORMAL mode
 " <Alt-k> => Insert above
@@ -199,12 +199,12 @@ vnoremap <silent><A-S-k> :m '>-2<CR>gv=gv
 vnoremap <silent><A-S-j> :m '>+1<CR>gv=gv
 
 " KEYMAP: Open/delete and navigate through tabs
-nnoremap <Leader><k> :tabnext<CR>
-nnoremap <Leader><j> :tabprev<CR>
-nnoremap <Leader><l> :tablast<CR>
-nnoremap <Leader><h> :tabfirst<CR>
-nnoremap <Leader><w> :tabclose<CR>
-nnoremap <Leader><t> :tabnew<CR>
+nnoremap <C-t>k :tabnext<CR>
+nnoremap <C-t>j :tabprev<CR>
+nnoremap <C-t>l :tablast<CR>
+nnoremap <C-t>h :tabfirst<CR>
+nnoremap <C-t>w :tabclose<CR>
+nnoremap <C-t>n :tabnew<CR>
 
 " KEYMAP: Increment-decrement split size
 nnoremap <silent><Leader>+ 20<C-w>> 
@@ -245,12 +245,9 @@ nmap <Leader>cc <Plug>NERDCommenterToggle
 nmap <Leader>c<space> <Plug>NERDCommenterCommentt
 
 " KEYMAP: fzf
-nmap <C-P> :FZF<CR>
+nmap <C-p> :GFiles<CR>
+nmap <C-x> :Buffers<CR>
 
-" Prettify on save
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-  
 " INFO
 " 
 " Plugin installation
