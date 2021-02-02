@@ -28,6 +28,7 @@ folder_init() {
 }
 
 update() {
+  folder_init
 	printf "%s\n" "Checking for file changes and updating..."
 	# Start copying
 	cp $GIT			  -vua  $REPO/.gitconfig
@@ -81,7 +82,6 @@ run_git() {
 	exit 0
 }
 
-folder_init
 update
 
 printf "%s" "Save changes [Y/n]? "
