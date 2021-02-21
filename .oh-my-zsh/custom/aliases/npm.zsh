@@ -1,12 +1,21 @@
 # npm
 #	Package managing
-alias ni="npm install"
 alias nig="sudo npm install --global"
+alias ni="npm install"
 alias nis="npm install --save"
-alias nisd="npm install --save-dev"
+alias nid="npm install --save-dev"
 alias nxi="npx install"
+alias nit="npm install-test"
+alias nits="npm install-test --save"
+alias nitd="npm install-test --save-dev"
+alias nu="npm uninstall"
+alias nus="npm uninstall --save"
+alias nud="npm uninsatll --save-dev"
 alias nup="npm upgrade"
+alias nud="npm udpate"
+alias nod="npm outdated"
 # Scripts
+alias nr="npm run"
 alias ns="npm start"
 alias nrs="npm run start"
 #	Packages
