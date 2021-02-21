@@ -54,14 +54,14 @@ run_git() {
 
 		printf "%s" "Commit changes [Y/n]? "
 		read yn
-		if [ "$yn" != "Y" ] && [ "$yn" != "y" ]; then
+		if [ "$yn" != "Y" ] && [ "$yn" != "y" ] && [ "$yn" != "" ]; then
 			exit 0
 		fi
 
 		printf "%s" "Custom commit message [Y/n]? "
 		read yn
 		msg="Updating .dotfiles"
-		if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
+		if [ "$yn" = "Y" ] || [ "$yn" = "y" ] || [ "$yn" = "" ]; then
 			printf "%s" "> "
 			read msg	
 		fi
@@ -71,7 +71,7 @@ run_git() {
 
 		printf "%s" "Push changes [Y/n]? "
 		read yn
-		if [ "$yn" != "Y" ] && [ "$yn" != "y" ]; then
+		if [ "$yn" != "Y" ] && [ "$yn" != "y" ] && [ "$yn" != "" ]; then
 			exit 0
 		fi
 
@@ -86,7 +86,7 @@ update
 
 printf "%s" "Save changes [Y/n]? "
 read yn
-if [ "$yn" = "Y" ] || [ "$yn" = "y" ]; then
+if [ "$yn" = "Y" ] || [ "$yn" = "y" ] || [ "$yn" = "" ]; then
 	run_git
 fi
 

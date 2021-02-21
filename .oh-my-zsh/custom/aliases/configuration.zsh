@@ -13,12 +13,17 @@ alias cfgalias="vim $HOME/.config/zsh/.oh-my-zsh/custom/aliases/configuration.zs
 alias npmalias="vim $HOME/.config/zsh/.oh-my-zsh/custom/aliases/npm.zsh"
 
 # apt
-si() { sudo apt install "$@" }
-sun() { sudo apt remove --purge "$@" }
+alias si="sudo apt install"
+alias sun="sudo apt remove --purge"
 alias sysupdt="sudo apt update && sudo apt upgrade"
 alias aptclean="sudo apt autoclean && sudo apt autoremove"
 
+# snap
+alias ssi="sudo snap install"
+alias ssun="sudo snap remove --purge"
+
 # File manipulation
+mkcd() { mkdir $1 && cd $1 }
 alias rmd="rm -rf"                  # Lazy remove files
 lazymv() { mv $1 $(dirname $1)$2 }  # Lazy move files
 
@@ -28,4 +33,5 @@ alias vim="nvim"                    # Open nvim over vim
 alias svim="sudo vim"               # Same but sudo
 alias falias="alias | grep "        # Search for an alias
 alias dotupdcfg="vim $HOME/Documents/dotman/update.sh"
+alias mysql="mysql -u mddg"         # Open mysql and ask for password
 

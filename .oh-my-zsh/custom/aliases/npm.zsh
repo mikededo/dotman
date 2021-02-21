@@ -1,9 +1,12 @@
 # npm
-#	Scripts
+#	Package managing
 alias ni="npm install"
 alias nig="sudo npm install --global"
 alias nis="npm install --save"
+alias nisd="npm install --save-dev"
 alias nxi="npx install"
+alias nup="npm upgrade"
+# Scripts
 alias ns="npm start"
 alias nrs="npm run start"
 #	Packages
@@ -13,7 +16,7 @@ alias nlsg="npm list --global"
 alias nrrd="nis react-router-dom"
 alias nrpt="nis prop-types"
 #	@General
-alias ibabel="nis @babel/core @babel/preset-env @babel/node"
+alias ibabel="nisd @babel/core @babel/preset-env @babel/node"
 
 # Package specific
 #	React
@@ -39,7 +42,7 @@ jsons() {
 	if [ -z $1 ]; then
 		json-server --watch data/db.json --port 8000
 	else
-		json-server --serverwatch $1 --port 8000
+		json-server --watch $1 --port 8000
 	fi
 }
 jsonsp() {
