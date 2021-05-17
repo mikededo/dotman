@@ -53,12 +53,19 @@ export EDITOR='nvim'
 # Custom folder
 ZSH_CUSTOM=$HOME/.config/zsh/.oh-my-zsh/custom
 
-# Needed to control save on vim
-alias vim="stty stop '' -ixoff; nvim"
-
 export TERM=xterm-256color
+
+# GoLang
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.config/zsh/.p10k.zsh ]] || source $HOME/.config/zsh/.p10k.zsh
 
+# NVIM fuzzy file finder plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# NVM - NodeJS version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+

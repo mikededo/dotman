@@ -34,4 +34,5 @@ alias svim="sudo vim"               # Same but sudo
 alias falias="alias | grep "        # Search for an alias
 alias dotupdcfg="vim $HOME/Documents/dotman/update.sh"
 alias mysql="mysql -u mddg"         # Open mysql and ask for password
+alias imgrn="exiftool -fileOrder DateTimeOriginal -recurse -extension jpg -extension jpeg -extension mp4 -ignoreMinorErrors '-FileName<FileModifyDate' -d '%Y-%m-%d-%%.3nc.%%e'"
 
